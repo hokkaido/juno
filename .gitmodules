@@ -9,4 +9,4 @@
 	url = https://github.com/puppetlabs/puppetlabs-stdlib.git
 [submodule "puppet/modules/postgresql"]
 	path = puppet/modules/postgresql
-	url = https://github.com/puppetlabs/puppetlabs-postgresql
+	url = https://github.com/puppetlabs/puppetlabs-postgresql.git
