@@ -1,15 +1,15 @@
-class golang ( 
-  $version =         $golang::params::version,
-  $arch =            $golang::params::arch,
+class golang (
+  $version         = $golang::params::version,
+  $arch            = $golang::params::arch,
   $remove_previous = $golang::params::remove_previous,
-  $archive_name =    $golang::params::archive_name,
-  $url =             $golang::params::url,
-  $download_dir =    $golang::params::download_dir,
-  $install_dir =     $golang::params::install_dir,
-  $workspace =       $golang::params::workspace,
-  $profile =         $golang::params::profile,
-  $user =            $golang::params::user,
-  $group =           $golang::params::group
+  $archive_name    = $golang::params::archive_name,
+  $url             = $golang::params::url,
+  $download_dir    = $golang::params::download_dir,
+  $install_dir     = $golang::params::install_dir,
+  $workspace       = $golang::params::workspace,
+  $profile         = $golang::params::profile,
+  $user            = $golang::params::user,
+  $group           = $golang::params::group
 ) inherits golang::params {
 
   validate_bool($remove_previous)

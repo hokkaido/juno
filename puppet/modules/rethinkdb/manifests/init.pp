@@ -1,5 +1,5 @@
 class rethinkdb (
-  $repository = 'ppa:rethinkdb/unstable',
+  $repository = 'ppa:rethinkdb/ppa',
   $package = 'rethinkdb',
   $version = 'present'
 ) {
