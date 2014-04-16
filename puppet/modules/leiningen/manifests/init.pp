@@ -1,7 +1,8 @@
 class leiningen (
-  $user  = 'vagrant',
-  $group = 'vagrant',
-  $url   = 'https://raw.github.com/technomancy/leiningen/stable/bin/lein'
+  $user    = 'vagrant',
+  $group   = 'vagrant',
+  $url     = 'https://raw.github.com/technomancy/leiningen/stable/bin/lein',
+  $profile = '/home/vagrant/.profile'
 ) {
 
   class { 'java': }
@@ -29,9 +30,9 @@ class leiningen (
                 Package["wget"]],
   }
 
-  exec {'exec leiningen':
-    command => "/home/${user}/bin/lein self-install",
-    creates => "/home/${user}/.lein",
+  file_line { 'export path':
+    path =>    $profile,
+    line =>    "export PATH=\$PATH:/home/${user}/bin",
     require => Exec["download leiningen"]
   }
 

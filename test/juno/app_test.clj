@@ -1,6 +1,6 @@
-(ns juno.juno-app-test
+(ns juno.app-test
   (:require [clojure.test :refer :all]
-            [juno.juno-app :refer :all]))
+            [juno.app :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."
