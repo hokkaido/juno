@@ -1,0 +1,5 @@
+class clojure (
+
+) {
+  class { 'java': }
+}
