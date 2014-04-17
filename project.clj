@@ -12,6 +12,6 @@
                  [compojure "1.1.6"]]
   :dev-dependencies [[ring/ring-devel "1.2.2"] [lein-light-nrepl "0.0.17"]]
   :repl-options {:nrepl-middleware [lighttable.nrepl.handler/lighttable-ops]}
-  :main ^:skip-aot juno.app
+  :main ^:skip-aot juno.server.cli
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})

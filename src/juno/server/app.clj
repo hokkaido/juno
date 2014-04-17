@@ -1,14 +1,31 @@
 (ns juno.server.app
-  (:require [clojure.string :as string]
-            [clojure.tools.cli :refer [parse-opts]])
-  (:gen-class))
+  (:require [compojure.core :refer [defroutes]]
+            [ring.adapter.jetty :as ring]
+            [compojure.route :as route]
+            [compojure.handler :as handler]
+            [compojure.core :refer :all]))
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
+(defroutes app-routes
+  (GET "/" [] "Hello World")
+  (route/not-found "404 Page Not Found"))
 
-(defn start
+(def app-handler
+  (handler/site app-routes))
 
+(defn start!
+  "Start juno with the given options"
+  [options]
+  (ring/run-jetty app-handler {:port (:port options)
+                               :join? false}))
 
-	)
+(defn stop!
+  "Stop juno"
+  [options]
+  (ring/run-jetty app-handler {:port (:port options)
+                               :join? false}))
+
+(defn restart!
+  "Restart juno with the given options"
+  [options]
+  (ring/run-jetty app-handler {:port (:port options)
+                               :join? false}))
