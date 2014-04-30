@@ -5,11 +5,9 @@ class leiningen (
   $profile = '/home/vagrant/.profile'
 ) {
 
-  class { 'java': }
-
-  package { "wget":
-    ensure => present,
-  }
+  # package { "wget":
+  #  ensure => present,
+  # }
 
   file { "create local-bin-folder":
     ensure => directory,
